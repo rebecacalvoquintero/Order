@@ -2,7 +2,7 @@ import { ApiModelProperty } from '@nestjs/swagger';
 import { PrimaryGeneratedColumn } from 'typeorm';
 
 import { Status } from '../shared/Status';
-import { IsDateString, IsEnum, IsString } from 'class-validator';
+import { IsDateString, IsEnum, IsString, IsUUID } from 'class-validator';
 
 export class NewOrderDto {
   @ApiModelProperty({ enum: ['Pending', 'InTransit', 'Delivered', 'Rejected']})
@@ -22,6 +22,6 @@ export class NewOrderDto {
 export class OrderDto  extends NewOrderDto {
   @ApiModelProperty()
   @PrimaryGeneratedColumn('uuid')
-  @IsString()
+  @IsUUID()
   readonly id: string;
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Order } from '../entities/order.entity';
-import { NewOrderDto, OrderDto } from '../DTO/OrderDto';
+import { NewOrderDto } from '../DTO/OrderDto';
 
 @Injectable()
 export class OrderService {
@@ -19,7 +19,7 @@ export class OrderService {
     return await this.orderRepository.find();
   }
 
-  async findOne(id: string): Promise <Order> {
+  async findOne(id: string): Promise<Order> {
     return await this.orderRepository.findOne(id);
   }
 
