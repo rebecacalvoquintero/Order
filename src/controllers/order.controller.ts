@@ -1,4 +1,16 @@
-import { Body, Controller, Get, Header, HttpException, HttpStatus, Logger, Param, Post, UsePipes } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Header,
+  HttpException,
+  HttpStatus,
+  Logger,
+  Param,
+  ParseUUIDPipe,
+  Post,
+  UsePipes,
+} from '@nestjs/common';
 import { NewOrderDto, OrderDto } from '../DTO/OrderDto';
 import { OrderService } from '../services/order.service';
 import { ValidationPipe } from '../shared/validation.pipe';
@@ -26,8 +38,8 @@ export class OrderController {
   }
 
   @Get( ':id' )
-  @UsePipes( new ValidationPipe() )
-  async findOne(@Param( 'id' ) id: string): Promise<OrderDto> {
+  @UsePipes(new ValidationPipe())
+  async findOne(@Param( 'id' , ParseUUIDPipe) id: string): Promise<OrderDto> {
     const order = await this.orderService.findOne( id );
     if (!order) {
       throw new HttpException( 'Not Found', HttpStatus.NOT_FOUND );
