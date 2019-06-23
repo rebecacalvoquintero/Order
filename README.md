@@ -4,6 +4,9 @@ An api to retrieve and create orders
 ## Technology used
     -Nest.js
 ## Challenges
-## Feautures to come
-    - CI
-    - 
+-Testing Documentation
+
+#To do 
+    - Deploy to Heroku -> set up heroku database
+    - Set up Ci
+ 
