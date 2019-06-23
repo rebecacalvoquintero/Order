@@ -13,7 +13,7 @@
     "prestart:prod": "rimraf dist && npm run build",
     "start:prod": "node dist/main.js",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles && npm run test:e2e",
     "test-server": "ts-node src/main.ts",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
