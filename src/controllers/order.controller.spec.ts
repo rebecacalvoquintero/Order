@@ -43,6 +43,29 @@ describe( 'OrderDto Controller', () => {
 
     expect( orderController.create( order ) ).toEqual(Promise.resolve(order));
   } );
+
+  it( 'should return a list of orders', () => {
+    const listOfOrders = [
+      {
+        id: 'some-uuid',
+        status: Status.Pending,
+        pickUpTime: new Date(),
+        pickUpAddress: 'some-address',
+        dropOffAddress: 'some-address',
+      },
+      {
+        id: 'other-uuid',
+        status: Status.Pending,
+        pickUpTime: new Date(),
+        pickUpAddress: 'other-address',
+        dropOffAddress: 'other-address',
+      },
+    ];
+
+    jest.spyOn( orderService, 'findAll' )
+      .mockImplementation( () => Promise.resolve( listOfOrders ) );
+    expect( orderController.findAll() ).toEqual(Promise.resolve(listOfOrders));
+  } );
 } );
 
 

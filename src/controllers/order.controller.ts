@@ -1,5 +1,5 @@
-import { Body, Controller, Header, Post } from '@nestjs/common';
-import { NewOrderDto } from '../DTO/OrderDto';
+import { Body, Controller, Get, Header, Post } from '@nestjs/common';
+import { NewOrderDto, OrderDto } from '../DTO/OrderDto';
 import { OrderService } from '../services/order.service';
 
 @Controller('order')
@@ -13,4 +13,10 @@ export class OrderController {
   async create(@Body() order: NewOrderDto): Promise<any> {
     return await this.orderService.create(order);
   }
+
+  @Get()
+  async findAll(): Promise<OrderDto[]> {
+    return await this.orderService.findAll();
+  }
+
 }
