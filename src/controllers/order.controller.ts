@@ -11,7 +11,7 @@ import {
   Post,
   UsePipes,
 } from '@nestjs/common';
-import { NewOrderDto, OrderDto } from '../DTO/OrderDto';
+import { NewOrderDto, OrderDto } from '../dto/OrderDto';
 import { OrderService } from '../services/order.service';
 import { ValidationPipe } from '../shared/validation.pipe';
 
