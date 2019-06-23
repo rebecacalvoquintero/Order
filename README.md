@@ -1,2 +1,2 @@
 # Order
-An api to retrieve and create ordedrs
+An api to retrieve and create orders
