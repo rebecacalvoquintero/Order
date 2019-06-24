@@ -1,7 +1,9 @@
 # Order
 An api to retrieve and create orders
 ## How to use it
-    - 
+    Visit the website:
+    
+    
     - Locally:
     Clone this project and run npm start.
     Visit Swagger and test the endpoints
@@ -14,6 +16,5 @@ An api to retrieve and create orders
 -Testing Documentation
 
 #To do 
-    - Deploy to Heroku -> set up heroku database
-    - Set up Ci
+    - Set up CI
  
