@@ -6,7 +6,7 @@ const dbConfig = {
   'type': 'postgres',
   'url': `${env.DATABASE_URL}`,
   'entities': [
-    env.PRODUCTION === 'true' ? 'dist' : 'src' + `/**/*.entity{.ts,.js}`,
+    `${env.PRODUCTION}/**/*.entity{.ts,.js}`,
   ],
   'synchronize': true,
 };
