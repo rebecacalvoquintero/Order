@@ -4,11 +4,7 @@ const {env} = process;
 const dbConfig = {
 'name': 'default',
 'type': 'postgres',
-'host': `${env.HOST}`,
-'port': `${env.PORT}`,
-'username': `${env.USER}`,
-'password': `${env.PASSWORD}`,
-'database': `${env.DATABASE}`,
+'url': `${env.DATABASE_URL}`,
 'entities': [
 'src/**/*.entity{.ts,.js}',
 ],
