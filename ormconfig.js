@@ -1,14 +1,14 @@
 require('dotenv').config();
-const {env} = process;
+const { env } = process;
 
 const dbConfig = {
-'name': 'default',
-'type': 'postgres',
-'url': `${env.DATABASE_URL}`,
-'entities': [
-'dist/**/*.entity{.ts,.js}',
-],
-'synchronize': true,
+  'name': 'default',
+  'type': 'postgres',
+  'url': `${env.DATABASE_URL}`,
+  'entities': [
+    env.PRODUCTION === 'true' ? 'dist' : 'src' + `/**/*.entity{.ts,.js}`,
+  ],
+  'synchronize': true,
 };
-console.log("cnfig", dbConfig);
+
 module.exports = dbConfig;
