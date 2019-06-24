@@ -15,7 +15,7 @@ import { NewOrderDto, OrderDto } from '../dto/OrderDto';
 import { OrderService } from '../services/order.service';
 import { ValidationPipe } from '../shared/validation.pipe';
 
-@Controller( 'order' )
+@Controller( 'orders' )
 export class OrderController {
 
   private logger = new Logger( 'OrderController' );
