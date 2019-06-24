@@ -5,9 +5,10 @@ import { OrderModule } from './order.module';
 import { HttpErrorFilter } from './shared/http-error.filter';
 import { APP_FILTER, APP_INTERCEPTOR } from '@nestjs/core';
 import { LoggingInterceptor } from './shared/logging.interceptor';
+import {dbConfig} from '../ormconfig';
 
 @Module( {
-  imports: [TypeOrmModule.forRoot(), OrderModule],
+  imports: [TypeOrmModule.forRoot(dbConfig), OrderModule],
   controllers: [],
   providers: [
     {
