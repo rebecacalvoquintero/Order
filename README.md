@@ -3,6 +3,7 @@ An api to retrieve and create orders
 ## How to use it
     Visit the website:
     
+    https://order-orkestro.herokuapp.com/
     
     - Locally:
     Clone this project and run npm start.
@@ -14,6 +15,7 @@ An api to retrieve and create orders
     -Nest.js
 ## Challenges
 -Testing Documentation
+- Heroku with ts
 
 #To do 
     - Set up CI
