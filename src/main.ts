@@ -7,7 +7,7 @@ async function bootstrap() {
 
   const options = new DocumentBuilder()
     .setTitle('Orders')
-    .setDescription('Get or post orders')
+    .setDescription('An api that retrieves and creates order')
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);
