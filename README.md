@@ -4,18 +4,30 @@ An api to retrieve and create orders
 
 ### Production
 
-    Visit this website
+Go to the [api](http://order-orkestro.herokuapp.com/api) and test the endpoints.
+ - To create an order, try the ```post/order```  endpoint.
+ ![](https://i.imgur.com/rwtAQ6H.png)
+ 
+ If you send an invalid data, ex. The wrong status or a number insted of a date, you will not be able to create the order in the database.
+ 
+ - To check your new order is in the database, you can just copy the uuid returned from the ```post/order``` endpoint and copy it in the get orders/{id} endpoint
+ -  ![](https://i.imgur.com/KjosjGI.png)
+
+- If you want to check all the orders that are currently in the database, just try the get ```/orders``` endpoint
 
 ### Locally
 
-     the website:
+Clone the repo:
+
+    ```git clone https://github.com/rebecacalvo```
     
-    https://order-orkestro.herokuapp.com/
-    
-    - Locally:
-    Clone this project and run npm start.
-    Visit Swagger and test the endpoints
-    Test the create endpoint, get, getALl
+Run
+    ```npm install ```
+
+Run
+    ``` npm start ```
+
+Test it out exactly in the same way as described it above.
     
     Run tests:
 ## To run the tests
@@ -30,4 +42,4 @@ An api to retrieve and create orders
 
 #To do 
     - Set up CI
- 
+    - Fix it for https -> There is no authentication so for now it is fine if it only runs in http.
