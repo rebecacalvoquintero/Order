@@ -4,6 +4,7 @@ import { AppModule } from '../src/app.module';
 import { INestApplication } from '@nestjs/common';
 import { OrderService } from '../src/services/order.service';
 import { Status } from '../src/shared/Status';
+import moment = require('moment');
 
 describe('OrderController (e2e)', () => {
   let app: INestApplication;
@@ -47,24 +48,24 @@ describe('OrderController (e2e)', () => {
     await app.init();
   });
 
-  it('POST /order', () => {
+  it('POST /orders', () => {
     return request(app.getHttpServer())
-      .post('/order')
+      .post('/orders')
       .send(newOrder)
       .expect(201)
       .expect(newOrder);
   });
 
-  it('GET /order ', () => {
+  it('GET /orders ', () => {
     return request(app.getHttpServer())
-      .get('/order')
+      .get('/orders')
       .expect(200)
       .expect(listOfOrders);
   });
 
-  it('GET /order/{id} ', () => {
+  it('GET /orders/{id} ', () => {
     return request(app.getHttpServer())
-      .get('/order/371e5c95-5470-4c40-a136-99062b906991')
+      .get('/orders/371e5c95-5470-4c40-a136-99062b906991')
       .expect(200)
       .expect(listOfOrders[1]);
   });
@@ -73,8 +74,8 @@ describe('OrderController (e2e)', () => {
     it('should send a HttpException and a 400 status if bad request', () => {
       const errorMessage = {
         'statusCode': 400,
-        'timestamp': '2019-6-23',
-        'path': '/order',
+        'timestamp': moment().format('YYYY-M-DD'),
+        'path': '/orders',
         'method': 'POST',
         'message': 'Validation failed: isEnum status must be a valid enum value, ' +
         'isDateString pickUpTime must be a ISOString, isString pickUpAddress must be a string, ' +
@@ -82,7 +83,7 @@ describe('OrderController (e2e)', () => {
       };
 
       return request(app.getHttpServer())
-        .post('/order')
+        .post('/orders')
         .send('some-order')
         .expect(400)
         .expect(errorMessage);
@@ -91,7 +92,7 @@ describe('OrderController (e2e)', () => {
     it('should send a HttpException and a 404 status if bad url', () => {
       const errorMessage = {
         'statusCode': 404,
-        'timestamp': '2019-6-23',
+        'timestamp': moment().format('YYYY-M-DD'),
         'path': '/',
         'method': 'GET',
         'message': 'Not Found',
@@ -105,13 +106,13 @@ describe('OrderController (e2e)', () => {
     it('should send a HttpException and a 400 status if the uuid has not the correct format', () => {
       const errorMessage = {
         'statusCode': 400,
-        'timestamp': '2019-6-23',
-        'path': '/order/%7Brandom-uuid%7D',
+        'timestamp': moment().format('YYYY-M-DD'),
+        'path': '/orders/%7Brandom-uuid%7D',
         'method': 'GET',
         'message': 'Bad Request',
       };
       return request(app.getHttpServer())
-        .get('/order/{random-uuid}')
+        .get('/orders/{random-uuid}')
         .expect(400)
         .expect(errorMessage);
     });

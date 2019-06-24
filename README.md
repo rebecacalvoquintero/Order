@@ -1,7 +1,14 @@
 # Order
-An api to retrieve and create orders
-## How to use it
-    Visit the website:
+An api to retrieve and create orders 
+## How to test it locally and in production
+
+### Production
+
+    Visit this website
+
+### Locally
+
+     the website:
     
     https://order-orkestro.herokuapp.com/
     
@@ -11,8 +18,12 @@ An api to retrieve and create orders
     Test the create endpoint, get, getALl
     
     Run tests:
+## To run the tests
+
+```npm run test```
+
 ## Technology used
-    -Nest.js
+   - Nest.js
 ## Challenges
 -Testing Documentation
 - Heroku with ts
