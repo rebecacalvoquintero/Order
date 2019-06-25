@@ -1,11 +1,13 @@
 # Order
 An api to retrieve and create orders 
+
 ## How to test it locally and in production
 
 ### Production
 
 Go to the [api](http://order-orkestro.herokuapp.com/api) and test the endpoints.
  - To create an order, try the ```post/order```  endpoint.
+ 
  ![](https://i.imgur.com/rwtAQ6H.png)
  
  If you send an invalid data, ex. The wrong status or a number insted of a date, you will not be able to create the order in the database.
@@ -43,3 +45,4 @@ Test it out exactly in the same way as described it above.
 #To do 
     - Set up CI
     - Fix it for https -> There is no authentication so for now it is fine if it only runs in http.
+ 
