@@ -33,7 +33,6 @@ Run
 
 Test it out exactly in the same way as described it above.
     
-    Run tests:
 ## To run the tests
 
 ```npm run test```
@@ -41,7 +40,7 @@ Test it out exactly in the same way as described it above.
 ## Technology used
    - Nest.js
 ## Challenges
--Testing Documentation
+ -Testing Documentation
 - Heroku with ts
 
 #To do 
