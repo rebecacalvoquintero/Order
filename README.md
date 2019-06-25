@@ -21,13 +21,15 @@ Go to the [api](http://order-orkestro.herokuapp.com/api) and test the endpoints.
 
 Clone the repo:
 
-    ```git clone https://github.com/rebecacalvo```
+``` git clone https://github.com/rebecacalvo ```
     
 Run
-    ```npm install ```
+
+``` npm install ```
 
 Run
-    ``` npm start ```
+
+``` npm start ```
 
 Test it out exactly in the same way as described it above.
     
